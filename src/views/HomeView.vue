@@ -6,7 +6,7 @@ import HeroSection from '@/components/HeroSection.vue'
 import BaseModal from '@/components/BaseModal.vue'
 const showModal = ref(false)
 const projects = [
-  { title: "AML Solution", description: "An AML solution for a small bank where they screen/monitor customer transaction to find fraudulent transactions.", image: new URL('@/assets/project1.png', import.meta.url).href },
+  { title: "Custom Solution", description: "A custom software solution for those who need a personalized product solutions for their needs.", image: new URL('@/assets/project1.png', import.meta.url).href },
   { title: "Ecommerce Solution", description: "A standard eCommerce solution to help a local shop get traction online along with SEO setup.", image: new URL('@/assets/project2.png', import.meta.url).href },
   { title: "Marketing Solution", description: "A WordPress website managing lead generation and product marketing.", image: new URL('@/assets/project3.png', import.meta.url).href },
 ]
