@@ -1,14 +1,16 @@
 <template>
-    <div class="border p-4 rounded-lg hover:shadow-lg transition duration-300">
-      <h2 class="text-2xl font-semibold mb-2">{{ post.title }}</h2>
-      <p class="text-gray-600 mb-2">{{ post.summary }}</p>
-      <small class="text-gray-500">{{ post.date }}</small>
-      <!-- You can add a 'Read More' link that navigates to a detailed view -->
-      <div class="mt-4">
-        <a :href="`/blog/${post.slug}`" class="text-blue-500 hover:underline">Read More</a>
-      </div>
+  <div class="w-full border p-4 rounded-lg hover:shadow-lg transition duration-300">
+    <h2 class="text-2xl font-semibold mb-2">{{ post.title }}</h2>
+    <p class="text-gray-600 mb-2">{{ post.summary }}</p>
+    <small class="text-gray-500">{{ post.date }}</small>
+    <div class="mt-4">
+      <router-link :to="`/the-code-craftsmen/blog/${post.slug}`" class="text-blue-500 hover:underline">
+        Read More
+      </router-link>
     </div>
-  </template>
+  </div>
+</template>
+
   
   <script setup lang="ts">
   interface BlogPostType {

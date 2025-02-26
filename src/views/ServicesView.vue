@@ -1,9 +1,12 @@
 <template>
-  <div class="container mx-auto p-6">
-    <h1 class="text-4xl font-bold mb-6 text-center">Our Services</h1>
+  <div class="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6">
+    <!-- Page Title -->
+    <h1 class="text-4xl font-bold mb-8 text-center transition-transform duration-500 transform hover:scale-105">
+      Our Services
+    </h1>
     
     <!-- Pricing Mode Toggle -->
-    <div class="flex justify-center mb-6">
+    <div class="flex justify-center mb-8">
       <button 
         class="px-4 py-2 border rounded-l-md focus:outline-none transition-colors duration-300"
         :class="{'bg-blue-600 text-white': pricingMode === 'monthly'}"
@@ -18,25 +21,34 @@
       </button>
     </div>
     
-    <div class="grid gap-6 md:grid-cols-2">
+    <!-- Services Grid -->
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl">
       <div 
         v-for="service in services" 
         :key="service.id" 
         @click="selectedService = service.id"
         :class="[
-          'border p-6 rounded-lg shadow-lg cursor-pointer transform transition duration-300',
-          { 'border-blue-500 scale-105': selectedService === service.id }
+          'bg-gray-800 p-6 rounded-xl shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105',
+          selectedService === service.id ? 'border-2 border-blue-500' : 'border border-gray-700'
         ]"
+        class="animate-fadeIn opacity-0"
       >
-        <div class="flex items-center mb-4">
-          <img :src="service.icon" alt="Service Icon" class="w-12 h-12 mr-4">
+        <div class="flex items-center space-x-4">
+          <div class="w-16 h-16 flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-500 rounded-full">
+            <img 
+              :src="service.icon" 
+              alt="Service Icon" 
+              class="w-8 h-8" 
+              onerror="this.src='https://via.placeholder.com/50'"
+            >
+          </div>
           <h2 class="text-2xl font-semibold">{{ service.title }}</h2>
         </div>
-        <p class="text-gray-600 mb-4">{{ service.description }}</p>
-        <p class="mt-2 font-bold text-xl">
+        <p class="text-gray-300 mt-4">{{ service.description }}</p>
+        <p class="mt-4 font-bold text-xl">
           {{ pricingMode === 'monthly' ? service.monthlyPrice : service.yearlyPrice }}
         </p>
-        <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
+        <button class="mt-6 w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition transform hover:scale-105">
           Get Started
         </button>
       </div>
@@ -45,41 +57,38 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { servicesData, type ServiceType } from '@/services/productServices'
+import { ref, onMounted } from 'vue'
 
-interface ServiceType {
-  id: number;
-  title: string;
-  description: string;
-  monthlyPrice: string;
-  yearlyPrice: string;
-  icon: string;
-}
+const services = ref<ServiceType[]>([])
 
-const services = ref<ServiceType[]>([
-  { 
-    id: 1, 
-    title: 'Service Package 1', 
-    description: 'Description of service package 1. Enjoy premium support and exclusive features.',
-    monthlyPrice: '$99', 
-    yearlyPrice: '$999', 
-    icon: 'https://via.placeholder.com/50'
-  },
-  { 
-    id: 2, 
-    title: 'Service Package 2', 
-    description: 'Description of service package 2. Perfect for businesses looking for extended services.',
-    monthlyPrice: '$199', 
-    yearlyPrice: '$1999', 
-    icon: 'https://via.placeholder.com/50'
-  },
-  // Add more services if needed...
-])
+onMounted(() => {
+  services.value = servicesData
+})
 
 const selectedService = ref<number | null>(null)
 const pricingMode = ref<'monthly' | 'yearly'>('monthly')
 </script>
 
 <style scoped>
-/* Additional custom styling can go here */
+/* Container max-width (optional) */
+.container {
+  max-width: 1200px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
 </style>
