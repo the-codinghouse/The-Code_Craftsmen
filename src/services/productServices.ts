@@ -17,7 +17,7 @@ export const servicesData: ServiceType[] = [
     monthlyPrice: "$99",
     yearlyPrice: "$999",
     // Use a local asset path or a valid URL
-    icon: "/assets/icons/package-1.svg",
+    icon: "public/assets/icons/package-1.svg",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ export const servicesData: ServiceType[] = [
       "Description of service package 2. Perfect for businesses looking for extended services.",
     monthlyPrice: "$199",
     yearlyPrice: "$1999",
-    icon: "/assets/icons/package-1.svg",
+    icon: "public/assets/icons/package-1.svg",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ export const servicesData: ServiceType[] = [
       "Description of service package 3. Perfect for businesses looking for premium services.",
     monthlyPrice: "$599",
     yearlyPrice: "$5999",
-    icon: "/assets/icons/package-1.svg",
+    icon: "public/assets/icons/package-1.svg",
   },
   // Add more services as needed...
 ];

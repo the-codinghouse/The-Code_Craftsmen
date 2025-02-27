@@ -1,6 +1,6 @@
 <!-- src/components/ThemeProvider.vue -->
 <script setup lang="ts">
-import { useUIStore } from '@/stores/ui'
+import { useUIStore } from '@/stores/uiStore'
 
 const uiStore = useUIStore()
 </script>
@@ -9,4 +9,4 @@ const uiStore = useUIStore()
   <div :class="{ 'dark': uiStore.isDarkMode }">
     <slot />
   </div>
-</template>
+</template>@/stores/uiStore

@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import BlogPost from '../components/BlogPost.vue'
+import BlogPost from '../components/blog/BlogPostCard.vue'
 import { getAllBlogs, type BlogPostType } from '@/services/blogService'
 
 const posts = ref<BlogPostType[]>([])

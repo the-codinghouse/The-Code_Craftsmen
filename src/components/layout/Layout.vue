@@ -15,9 +15,9 @@
   </template>
   
   <script setup lang="ts">
-  import ResponsiveNavbar from '@/components/ResponsiveNavbar.vue'
-  import CookiePopup from '@/components/CookiePopup.vue'
-  import Footer from '@/components/Footer.vue'
+    import ResponsiveNavbar from '@/components/common/ResponsiveNavbar.vue'
+    import CookiePopup from '@/components/common/CookiePopup.vue'
+    import Footer from '@/components/layout/Footer.vue'
   </script>
   
   <style scoped>

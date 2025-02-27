@@ -19,7 +19,8 @@ const blogPosts: BlogPostType[] = [
     slug: "my-first-blog-post",
     image: "https://placehold.co/600x400/orange/white",
     tags: ["Vue", "JavaScript"],
-    content: "This is the full content of my first blog post...",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptas voluptatum dolor quae doloremque voluptate culpa molestiae officia magni unde eligendi dolores voluptates esse reiciendis, odio eos sunt maxime explicabo.",
   },
   {
     id: 2,
@@ -29,7 +30,8 @@ const blogPosts: BlogPostType[] = [
     slug: "another-post",
     image: "https://placehold.co/600x400/orange/white",
     tags: ["Tech", "Trends"],
-    content: "This is the full content of another post...",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptas voluptatum dolor quae doloremque voluptate culpa molestiae officia magni unde eligendi dolores voluptates esse reiciendis, odio eos sunt maxime explicabo.",
   },
   {
     id: 3,
@@ -39,7 +41,8 @@ const blogPosts: BlogPostType[] = [
     slug: "project-name",
     image: "https://placehold.co/600x400/orange/white",
     tags: ["Projects", "Development"],
-    content: "Detailed insights on our latest project...",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptas voluptatum dolor quae doloremque voluptate culpa molestiae officia magni unde eligendi dolores voluptates esse reiciendis, odio eos sunt maxime explicabo.",
   },
 ];
 

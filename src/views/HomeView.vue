@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import HeroSection from '@/components/HeroSection.vue'
+import HeroSection from '@/components/sections/HeroSection.vue'
 // import ServicesPreview from '@/components/ServicesPreview.vue'
 // import BlogPreview from '@/components/BlogPreview.vue'
-import BaseModal from '@/components/BaseModal.vue'
-import Aboutus from '@/components/aboutus.vue';
-import Services from '@/components/services.vue';
-import Portfolio from '@/components/portfolio.vue';
+import BaseModal from '@/components/common/BaseModal.vue'
+import Aboutus from '@/components/sections/aboutus.vue';
+import Services from '@/components/sections/services.vue';
+import Portfolio from '@/components/sections/portfolio.vue';
 import BlogView from './BlogView.vue';
 const showModal = ref(false)
 
