@@ -1,31 +1,26 @@
 <template>
-  <div class="min-h-screen bg-gray-900 text-white p-10">
-    <h1 class="text-4xl font-bold mb-6 text-center transition-transform duration-500 transform hover:scale-105">
-      Blog
-    </h1>
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
-      <BlogPost 
-        v-for="post in posts" 
-        :key="post.id" 
-        :post="post"
-      />
+  <div class="container mx-auto p-6">
+    <h1 class="text-4xl font-bold mb-6 text-center">Blog</h1>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div v-for="post in posts" :key="post.id" class="bg-gray-800 p-4 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-white">{{ post.title }}</h2>
+        <p class="text-gray-300 mt-2">{{ post.summary }}</p>
+        <router-link :to="`/blog/${post.slug}`" class="mt-4 inline-block text-blue-400 hover:underline">
+          Read More →
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import BlogPost from '../components/blog/BlogPostCard.vue'
-import { getAllBlogs, type BlogPostType } from '@/services/blogService'
+import { ref, onMounted } from "vue";
+import { fetchAllBlogs, getAllBlogs, type BlogPostType } from "@/api/blogApi";
 
-const posts = ref<BlogPostType[]>([])
+const posts = ref<BlogPostType[]>([]);
 
-onMounted(() => {
-  posts.value = getAllBlogs()
-  console.log('Loaded blog posts:', posts.value)
-})
+onMounted(async () => {
+  await fetchAllBlogs();
+  posts.value = getAllBlogs();
+});
 </script>
-
-<style scoped>
-/* Additional styles if needed */
-</style>

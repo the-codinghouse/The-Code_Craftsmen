@@ -4,8 +4,9 @@
       <div class="flex justify-between items-center">
         <!-- Brand -->
         <router-link to="/"
-          class="font-heading text-2xl text-craftsman-amber-500 hover:text-craftsman-amber-600 transition-colors">
-          THE CODE CRAFTSMEN
+          class="font-heading text-2xl text-craftsman-amber-500 hover:text-craftsman-amber-600 transition-colors"
+          style="margin: -30px;">
+          <img src="/assets/logo-no-bg.png" alt="" width="100px" />
         </router-link>
 
         <!-- Desktop Links -->
