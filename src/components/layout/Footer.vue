@@ -5,13 +5,6 @@
         <div class="mb-4 md:mb-0">
           <p class="text-sm">&copy; 2025 The Code Craftsmen. All rights reserved.</p>
         </div>
-        <!-- Navigation Links -->
-        <div class="flex space-x-4">
-          <a href="#" class="hover:text-blue-400">Home</a>
-          <a href="#" class="hover:text-blue-400">Blog</a>
-          <a href="#" class="hover:text-blue-400">Services</a>
-          <a href="#" class="hover:text-blue-400">Contact</a>
-        </div>
         <!-- Social Media Icons -->
         <div class="flex space-x-4 mt-4 md:mt-0">
           <a href="#" class="hover:text-blue-400" aria-label="Facebook">
